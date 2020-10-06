@@ -1,0 +1,35 @@
+{
+    "name": "vajexal/laravel-attributes-relationships",
+    "description": "Laravel eloquent relationships using attributes",
+    "keywords": [
+        "laravel",
+        "eloquent",
+        "attribute",
+        "relationships"
+    ],
+    "require": {
+        "laravel/framework": "^8.7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3",
+        "orchestra/testbench": "^6.2",
+        "vimeo/psalm": "^3.16"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vajexal\\AttributeRelations\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vajexal\\AttributeRelations\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vajexal\\AttributeRelations\\AttributeRelationsServiceProvider"
+            ]
+        }
+    }
+}
