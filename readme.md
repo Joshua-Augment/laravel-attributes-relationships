@@ -1,6 +1,7 @@
 Laravel eloquent relationships using php 8 attributes
 
 [![Build Status](https://github.com/vajexal/laravel-attributes-relationships/workflows/Build/badge.svg)](https://github.com/vajexal/laravel-attributes-relationships/actions)
+[![codecov](https://codecov.io/gh/vajexal/laravel-attributes-relationships/branch/master/graph/badge.svg?token=ECO1PBBOY4)](https://codecov.io/gh/vajexal/laravel-attributes-relationships)
 
 ### Installation
 
