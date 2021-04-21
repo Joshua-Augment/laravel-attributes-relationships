@@ -4,12 +4,15 @@ namespace Vajexal\AttributeRelations\Relations;
 
 use Attribute;
 
-#[Attribute(Attribute::TARGET_CLASS|Attribute::IS_REPEATABLE)]
+#[Attribute(Attribute::TARGET_CLASS | Attribute::IS_REPEATABLE)]
 class MorphTo implements RelationAttribute
 {
     private string $name;
     private array  $arguments;
 
+    /**
+     * @no-named-arguments
+     */
     public function __construct(string $name, array ...$arguments)
     {
         $this->name      = $name;

@@ -5,12 +5,15 @@ namespace Vajexal\AttributeRelations\Relations;
 use Attribute;
 use Illuminate\Support\Str;
 
-#[Attribute(Attribute::TARGET_CLASS|Attribute::IS_REPEATABLE)]
+#[Attribute(Attribute::TARGET_CLASS | Attribute::IS_REPEATABLE)]
 class BelongsTo implements RelationAttribute
 {
     private string $related;
     private array  $arguments;
 
+    /**
+     * @no-named-arguments
+     */
     public function __construct(string $related, array ...$arguments)
     {
         $this->related   = $related;
