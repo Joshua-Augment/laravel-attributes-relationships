@@ -4,6 +4,7 @@
 /phpunit.xml.dist export-ignore
 /Dockerfile       export-ignore
 /psalm.xml        export-ignore
+/.github          export-ignore
 
 *.php diff=php
 *.phar -diff
