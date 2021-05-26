@@ -6,7 +6,7 @@ Laravel eloquent relationships using php 8 attributes
 ### Installation
 
 ```bash
-composer require vajexal/laravel-attributes-relationships:dev-master
+composer require vajexal/laravel-attributes-relationships
 ```
 
 The package will automatically register a service provider
