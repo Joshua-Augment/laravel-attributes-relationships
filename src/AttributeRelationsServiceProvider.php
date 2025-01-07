@@ -12,24 +12,26 @@ use Vajexal\AttributeRelations\Relations\RelationAttribute;
 
 class AttributeRelationsServiceProvider extends ServiceProvider
 {
-    public function boot(): void
-    {
-        Event::listen('eloquent.booted:*', function (string $eventName, array $data) {
-            $model = $data[0];
+   protected static array $attributeCache = [];
+   public function boot(): void
+   {
+      Event::listen('eloquent.booted:*', function (string $eventName, array $data) {
+         $model = $data[0];
+         $class = get_class($model);
 
+         if (!isset(self::$attributeCache[$class])) {
             $reflection = new ReflectionObject($model);
-            $attributes = $reflection->getAttributes(RelationAttribute::class, ReflectionAttribute::IS_INSTANCEOF);
+            self::$attributeCache[$class] = $reflection->getAttributes(RelationAttribute::class, ReflectionAttribute::IS_INSTANCEOF);
+         }
 
-            foreach ($attributes as $attribute) {
-                /** @var RelationAttribute $relation */
-                $relation = $attribute->newInstance();
+         foreach (self::$attributeCache[$class] as $attribute) {
+            $relation = $attribute->newInstance();
 
-                $model::resolveRelationUsing($relation->guessRelationName(), function (Model $model) use ($relation): Relation {
-                    $method = lcfirst(class_basename(get_class($relation)));
-
-                    return $model->{$method}(...$relation->getArguments());
-                });
-            }
-        });
-    }
+            $model::resolveRelationUsing($relation->guessRelationName(), function (Model $model) use ($relation): Relation {
+               $method = lcfirst(class_basename(get_class($relation)));
+               return $model->{$method}(...$relation->getArguments());
+            });
+         }
+      });
+   }
 }

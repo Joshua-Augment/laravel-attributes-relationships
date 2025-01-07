@@ -1,7 +1,16 @@
 Laravel eloquent relationships using php 8 attributes
 
-[![Build Status](https://github.com/vajexal/laravel-attributes-relationships/workflows/Build/badge.svg)](https://github.com/vajexal/laravel-attributes-relationships/actions)
-[![codecov](https://codecov.io/gh/vajexal/laravel-attributes-relationships/branch/master/graph/badge.svg?token=ECO1PBBOY4)](https://codecov.io/gh/vajexal/laravel-attributes-relationships)
+<!-- [![Build Status](https://github.com/vajexal/laravel-attributes-relationships/workflows/Build/badge.svg)](https://github.com/vajexal/laravel-attributes-relationships/actions)
+[![codecov](https://codecov.io/gh/vajexal/laravel-attributes-relationships/branch/master/graph/badge.svg?token=ECO1PBBOY4)](https://codecov.io/gh/vajexal/laravel-attributes-relationships) -->
+
+# Laravel Relationship Attributes
+
+This package is a maintained fork of [vajexal/laravel-attributes-relationships](https://github.com/vajexal/laravel-attributes-relationships). It adds compatibility with Laravel 9–11 and includes several improvements.
+
+## Key Changes
+- Updated to support Laravel 11.
+- Added performance improvements.
+- Fixed minor issues with relation resolution.
 
 ### Installation
 
